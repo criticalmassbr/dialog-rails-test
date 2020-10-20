@@ -8,6 +8,9 @@
       <th scope="col">sexo</th>
       <th scope="col">cidade</th>
       <th scope="col">uf</th>
+      <th scope="col">show</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
     </tr>
   </thead>
   <tbody>
@@ -19,9 +22,9 @@
       <td ><%= user.sexo %></td>
       <td ><%= user.cidade %></td>
       <td ><%= user.uf %></td>
-      <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'show', user %></td>
+      <td><%= link_to 'edit', edit_user_path(user) %></td>
+      <td><%= link_to 'delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>

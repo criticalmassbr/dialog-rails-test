@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # home
-  root 'static#home'
+  root to: "users#index"
 
   # user
   resources :users
