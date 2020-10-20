@@ -26,7 +26,7 @@
       <td ><%= user.uf %></td>
       <td><%= link_to 'show', user %></td>
       <td><%= link_to 'edit', edit_user_path(user) %></td>
-      <td><%= link_to 'delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'delete', user, method: :delete, data: { confirm: 'are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'new user', new_user_path %>
+<%= link_to 'new user', new_user_path, class: "btn btn-primary float-right" %>
