@@ -1,24 +1,36 @@
 {
   "name": "dialog-node",
   "version": "1.0.0",
-  "description": "- node.js\r -\treact\r -\treact-dom\r -\treact-create-app\r -\tnpm\r -\tcss\r -\tes6\r - webpack\r - git",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/firmoholanda/dialog-node.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "w": "webpack --watch",
+    "s": "webpack-dev-server --content-base ./dist --port 3001 --hot"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/firmoholanda/dialog-node/issues"
-  },
-  "homepage": "https://github.com/firmoholanda/dialog-node#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.0",
+    "dotenv-webpack": "^4.0.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.1.1",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "webpack": "^5.1.3",
-    "webpack-cli": "^4.1.0"
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
+    "npm-upgrade": "^2.0.4",
+    "popper.js": "^1.16.1"
   }
 }
