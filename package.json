@@ -1,0 +1,19 @@
+{
+  "name": "dialog-node",
+  "version": "1.0.0",
+  "description": "- node.js\r -\treact\r -\treact-dom\r -\treact-create-app\r -\tnpm\r -\tcss\r -\tes6\r - webpack\r - git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firmoholanda/dialog-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firmoholanda/dialog-node/issues"
+  },
+  "homepage": "https://github.com/firmoholanda/dialog-node#readme"
+}
