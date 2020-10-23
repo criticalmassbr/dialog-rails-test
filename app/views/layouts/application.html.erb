@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dialog rails</title>        
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    
+    <% if current_page?(root_path) %>
+      <%= render 'layouts/jumbotron' %>
+    <% end %>
+    
+    <div class="container">
+      
+        <%= yield %>
+        
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if false %>
+      
+    </div>
+  </body>
+</html>
