@@ -9,6 +9,7 @@ const header = `
         </tr>
       </tbody>
     </table>
+    <button id="fetch-users-btn" class="btn btn-primary float-right">fetch users</button>
   </div>
   `;
 

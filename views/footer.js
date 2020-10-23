@@ -1,5 +1,5 @@
 const footer = `
-  <footer class="footer">
+  <footer class="footer py-5">
     <hr>
     <small>
       dialog-node created by:

@@ -16,6 +16,7 @@ main.insertAdjacentHTML('beforeEnd', footer);
 // get html elements
 const displayErrorElement = document.getElementById('displayError');
 const usersTableElement = document.getElementById('users-table');
+const fetchUsersBtn = document.getElementById('fetch-users-btn');
 
 // display erro messages
 const displayError = (err) => {
@@ -60,7 +61,7 @@ function loadUsersToPage() {
   
 }
 
-loadUsersToPage();
-
-
-
+// call loadUsersToPage on click
+fetchUsersBtn.addEventListener('click', ()=>{
+  loadUsersToPage();
+})
