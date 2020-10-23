@@ -24,7 +24,7 @@ this project can be found in https://github.com/firmoholanda/dialog-node
 ### ✨ [live version]()
 
 <a href="" target="_blank">
-    <img alt="app image" src="https://github.com/firmoholanda/dialog-node/blob/development/app/assets/images/app_print_screen.png"/>
+    <img alt="app image" src="https://github.com/firmoholanda/dialog-node/blob/development/views/assets/app_print_screen.png"/>
 </a>
 
 
