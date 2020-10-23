@@ -41,24 +41,19 @@ navigate into the newly created folder:
 $ cd dialog-node
 ```
 
-migrate database:
+install dependencies:
 ```
-$ rails db:migrate
-```
-
-seed database:
-```
-$ rails db:seed
+$ npm i
 ```
 
 start server:
 ```
-$ rails s
+$ node app.js
 ```
 
 visit this link in your browser:
 ```
-$ http://localhost:3000/
+$ http://localhost:3001/
 ```
 
 
