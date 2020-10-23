@@ -15,6 +15,7 @@ main.insertAdjacentHTML('beforeEnd', footer);
 
 // get html elements
 const displayErrorElement = document.getElementById('displayError');
+const usersTableElement = document.getElementById('users-table');
 
 // display erro messages
 const displayError = (err) => {
@@ -29,13 +30,37 @@ const getUsers = async () => {
   try {
     const response = await fetch("http://localhost:3000/users.json");
     users = await response.json();
-    
   } catch (err) {
     displayError('error retrieving users:' + err);
   }
-  console.log(users)
   return users;
 };
 
+// load user to page
+function loadUsersToPage() {
+  const myUsers = getUsers();
+  
+  myUsers.then(response => {
+    var tableHTML = "<tr>";
+    for (var headers in response[0]) {
+      tableHTML += "<th>" + headers + "</th>";
+    }
+    tableHTML += "</tr>";
 
-getUsers();
+    for (var eachItem in response) {
+      tableHTML += "<tr>";
+      var dataObj = response[eachItem];
+      for (var eachValue in dataObj){
+        tableHTML += "<td>" + dataObj[eachValue] + "</td>";
+      }
+      tableHTML += "</tr>";
+    }
+    usersTableElement.innerHTML = tableHTML;
+  });
+  
+}
+
+loadUsersToPage();
+
+
+
