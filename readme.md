@@ -1,32 +1,31 @@
 # 📃 dialog-rails
 
-
+rails api with CRUD user table
 
 ## 📡 technologies used
 
-- node.js
--	react
--	react-dom
--	react-create-app
--	npm
--	css
--	es6
-- webpack
+- ruby
+- rails
+- sqlite3
+- bootstrap
+- will_paginate
+- faker
 - git
 
-node.js, react, react-dom, react-create-app, npm, css, es6, webpack and git was used on this project.
+
+ruby, rails, sqlite3, bootstrap, will_paginate, faker and git was used on this project.
 
 
 
 ## 🚀 the project
 
-this project can be found in https://github.com/cyrus-kiprop/bookstore-react-redux
+this project can be found in https://github.com/firmoholanda/dialog-rails
 
 
-### ✨ [live version](http://bookstore-react-redux-ck-fh.herokuapp.com/)
+### ✨ [live version]()
 
 <a href="" target="_blank">
-    <img alt="app image" src=""/>
+    <img alt="app image" src="https://github.com/firmoholanda/dialog-rails/blob/development/app/assets/images/app_print_screen.png"/>
 </a>
 
 
@@ -35,67 +34,41 @@ this project can be found in https://github.com/cyrus-kiprop/bookstore-react-red
 
 to get started with the app, clone the repo:
 ```
-$ git@github.com:cyrus-kiprop/bookstore-react-redux.git
+$ git@github.com:firmoholanda/dialog-rails.git
 ```
 
 navigate into the newly created folder:
 ```
-$ cd bookstore-react-redux
+$ cd dialog-rails
 ```
 
-install the dependencies:
+migrate database:
 ```
-$ npm install
+$ rails db:migrate
 ```
 
-bundle the files and start the development server:
+seed database:
 ```
-$ npm start
+$ rails db:seed
+```
+
+start server:
+```
+$ rails s
 ```
 
 visit this link in your browser:
 ```
-$ http://localhost:8000/
-```
-
-run tests:
-```
-$ npm test
-
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+$ http://localhost:3000/
 ```
 
 
 
 ## 🤝 contributing
 
-contributions, issues, and feature requests are welcome!<br/>feel free to check [issues page](hhttps://github.com/cyrus-kiprop/bookstore-react-redux/development/issues).
+contributions, issues, and feature requests are welcome! feel free to check [issues page](hhttps://github.com/firmoholanda/dialog-rails/development/issues).
 
-1. fork it (https://github.com/cyrus-kiprop/bookstore-react-redux/development/fork)
+1. fork it (https://github.com/firmoholanda/dialog-rails/development/fork)
 2. create your working branch (git checkout -b [choose-a-name])
 3. commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. push to the branch (git push origin [chosen-name])
@@ -117,4 +90,4 @@ give a ⭐️ if you like this project!
 
 ## 📝 license
 
-this project is [MIT](https://github.com/cyrus-kiprop/bookstore-react-redux/development/license.txt) licensed.
+this project is [MIT](https://github.com/firmoholanda/dialog-rails/development/license.txt) licensed.
