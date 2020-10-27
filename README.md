@@ -10,11 +10,12 @@ Desenvolver uma aplicação Rails, com duas páginas de listagem:
 - quantidade de registros 100
 - criar e popular tabela com migration(s)
 - 1a página CRUD da tabela `users`
-- 2a página leitura API
+- 2a página leitura API (irá acessar o endpoint no Node), stack:
     - Node
     - REST express
+        - o endpoint de leitura irá acessar diretamente os dados `dialog-rails.users` criada na migration
+        - retorna um JSON, obedecendo a paginação (não pode retornar todos os registros em uma única chamada)
     - ORM sequelize
-    - o endpoint de leitura irá acessar os dados da tabela criada na migration
 - paginação de 25 registros (tanto no CRUD, como na chamada a API)
 - utilize os diretórios `node` e `rails`
 - utilize os arquivos `.env` na raiz de cada diretório para string de conexão
