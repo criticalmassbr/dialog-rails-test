@@ -1,0 +1,31 @@
+<h4>users:</h4>
+<table class="table p-3 mb-3 table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">nome</th>
+      <th scope="col">idade</th>
+      <th scope="col">sexo</th>
+      <th scope="col">cidade</th>
+      <th scope="col">uf</th>
+      <th scope="col">show</th>
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% User.all.each do |user| %>
+    <tr>
+      <td ><%= user.id %></td>
+      <td ><%= user.nome %></td>
+      <td ><%= user.idade %></td>
+      <td ><%= user.sexo %></td>
+      <td ><%= user.cidade %></td>
+      <td ><%= user.uf %></td>
+      <td><%= link_to 'show', user %></td>
+      <td><%= link_to 'edit', edit_user_path(user) %></td>
+      <td><%= link_to 'delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
