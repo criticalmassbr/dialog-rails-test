@@ -1,0 +1,6 @@
+[submodule "rails/dialog-rails"]
+	path = rails/dialog-rails
+	url = https://github.com/Davidsonts/dialog-rails.git
+[submodule "node/nodejs-express-sequelize-mysql"]
+	path = node/nodejs-express-sequelize-mysql
+	url = https://github.com/Davidsonts/nodejs-express-sequelize-mysql.git
