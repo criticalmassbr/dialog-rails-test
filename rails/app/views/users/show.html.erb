@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<%= bootstrap_form_with(model: @user) do |form| %>
+  <%= form.text_field :id, disabled: true, readonly: true %>
+
+  <div class="row">
+    <div class="col-8">
+      <%= form.text_field :nome, disabled: true, readonly: true %>
+    </div>
+    <div class="col-4">
+      <%= form.text_field :idade, disabled: true, readonly: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+    <%= form.text_field :sexo, value: t_sexo(@user.sexo), disabled: true, readonly: true %>
+    </div>
+    <div class="col-6">
+      <%= form.text_field :cidade, disabled: true, readonly: true %>
+    </div>
+    <div class="col-4">
+      <%= form.text_field :uf, disabled: true, readonly: true %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

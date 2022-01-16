@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users via Node (2a)</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="text-center">
+        <th>#</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Cidade</th>
+        <th>UF</th>
+        <th>Criação</th>
+        <th>Atualização</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.nome %></td>
+          <td class="text-center"><%= user.idade %></td>
+          <td><%= t_sexo(user.sexo) %></td>
+          <td><%= user.cidade %></td>
+          <td class="text-center"><%= user.uf %></td>
+          <td class="text-center"><%= l(user.created_at, format: :datetime) %></td>
+          <td class="text-center"><%= l(user.updated_at, format: :datetime) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-12">
+    <%= render 'pagination' %>
+  </div>
+</div>
