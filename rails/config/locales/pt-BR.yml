@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    enums:
+      users:
+        sexos:
+          nao_informado: Não informado
+          masculino: Masculino
+          feminino: Feminino
+  time:
+    formats:
+      datetime: "%d/%m/%Y %H:%M"
+      

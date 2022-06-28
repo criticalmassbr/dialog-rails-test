@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users (1a)</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="text-center">
+        <th>#</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Cidade</th>
+        <th>UF</th>
+        <th>Criação</th>
+        <th>Atualização</th>
+        <th colspan="3">Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.nome %></td>
+          <td class="text-center"><%= user.idade %></td>
+          <td><%= t_sexo(user.sexo) %></td>
+          <td><%= user.cidade %></td>
+          <td class="text-center"><%= user.uf %></td>
+          <td class="text-center"><%= l(user.created_at, format: :datetime) %></td>
+          <td class="text-center"><%= l(user.updated_at, format: :datetime) %></td>
+          <td class="text-center"><%= link_to 'Exibir', user %></td>
+          <td class="text-center"><%= link_to 'Editar', edit_user_path(user) %></td>
+          <td class="text-center"><%= link_to 'Remover', user, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-8">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+  <div class="col-4">
+    <%= link_to 'Cadastrar Usuário', new_user_path %>
+  </div>
+</div>

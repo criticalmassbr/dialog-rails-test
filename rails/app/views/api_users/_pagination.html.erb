@@ -1,0 +1,25 @@
+<nav aria-label="pager" class="pagy-bootstrap-nav" role="navigation">
+  <ul class="pagination">
+    <% if @previous_page %> 
+      <li class="page-item prev">
+        <%= link_to "< Anterior", api_users_path(page: @previous_page), :'aria-label' => :previous, class: 'page-link' %>
+      </li>
+    <% else %>
+      <li class="page-item prev disabled">
+        <a href="#" class="page-link">< Anterior</a>
+      </li>
+    <% end %>
+    <% (1..@total_pages).each do |page| %>
+      <li class="page-item <%= 'active' if page - 1 == @current_page %>">
+        <%= link_to page, api_users_path(page: page), class: 'page-link' %>
+      </li>
+    <% end %>
+    <% if @next_page %>
+      <li class="page-item next">
+        <%= link_to "Próximo >", api_users_path(page: @next_page), :'aria-label' => :next, class: 'page-link' %>
+      </li>
+    <% else %>
+      <li class="page-item next disabled"><a href="#" class="page-link">Próximo ></a></li>
+    <% end %>
+  </ul>
+</nav>

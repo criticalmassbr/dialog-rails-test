@@ -1,0 +1,24 @@
+{
+  "name": "dialog-node",
+  "version": "1.0.0",
+  "description": "Dialog Nodejs Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dialog",
+    "nodejs",
+    "magno"
+  ],
+  "author": "Magno Silveira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^12.0.4",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.13.0"
+  }
+}

@@ -1,0 +1,39 @@
+<%= bootstrap_form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :id, disabled: true if user.persisted? %>
+
+  <div class="row">
+    <div class="col-8">
+      <%= form.text_field :nome, required: true %>
+    </div>
+    <div class="col-4">
+      <%= form.text_field :idade %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+    <%= form.select :sexo, sexo_options_for_select %>
+    </div>
+    <div class="col-6">
+      <%= form.text_field :cidade %>
+    </div>
+    <div class="col-4">
+      <%= form.text_field :uf %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
