@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h5 class="modal-title"> <%= @titulo %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <%= form_with model: @user, url: @url do |form| %>
+            <div class="d-flex flex-column">
+                <div class="p-2 form-row">
+                    <%= form.label :nome %>
+                    <%= form.text_field :nome, class: "chosen-select" %>
+                </div>
+
+                <div class="p2 form-row">
+                    <%= form.label :idade %>
+                    <%= form.number_field :idade %>
+                </div>
+
+                <div class="p-2 form-row">
+                    <%= form.label :gênero %>
+                    <%= form.select :sexo, [['Masculino', 'M'], ['Feminino', 'f'], ['Outros', 'outros']], class: "dropdown"%>
+                </div>
+
+                <div class="p-2 form-row">
+                    <%= form.label :estado %>
+                    
+                    <%#  Mapeando para ficar no formato [[0,'AC'], [1, AP] ...]%>
+                    <%= form.select :uf, @estados.pluck('sigla', 'sigla'), html: {id: "uf"}%>
+                </div>
+                
+                <div class="p-2 form-row">
+                    <%= form.label :cidade %>
+                    <%= form.select :cidade, @cidades, html: {id: "cidade"}%>
+                </div>
+                
+                <%= form.submit @user.try(:id) ? 'Editar' : 'Criar', class: "btn btn-success col-3 float-right" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<%# Populando cidades a partir da escolha do estado %>
+<script type="text/javascript">
+    
+    $(document).ready( function() {
+        console.log('Buscar')
+        $("#uf,#user_uf").on('change', function() {
+            $.ajax({
+                url: '/get_cidades/' + this.value,
+                success: function (data) {
+                    var items = "";
+                    $.each(data, function (i, item) {
+                        items += "<option value='" + item + "'>" + item + "</option>";
+                    });
+                    $('#cidade,#user_cidade').html(items)
+                   
+                    
+                }
+            })
+
+        })
+    })
+
+</script>
