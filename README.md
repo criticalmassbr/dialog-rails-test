@@ -1,32 +1,76 @@
-# Dialog Rails/Node Test
 
-## Objetivo
+# Desafio dialog
 
-Desenvolver uma aplicação Rails, com duas páginas de listagem:
+Projeto-desafio para desenvolvedor backend, consiste
+em duas aplicações, uma em rails e a outra em node
+express compartilhando o mesmo database.
 
-- banco MySQL, schema deve ser `dialog-rails`
-- tabela `users`
-- campos `id, nome, idade, sexo, cidade, uf`
-- quantidade de registros 100
-- criar e popular tabela com migration(s)
-- 1a página CRUD da tabela `users`
-- 2a página leitura API (irá acessar o endpoint no Node), stack:
-    - Node
-    - REST express
-        - o endpoint de leitura irá acessar diretamente os dados `dialog-rails.users` criada na migration
-        - retorna um JSON, obedecendo a paginação (não pode retornar todos os registros em uma única chamada)
-    - ORM sequelize
-- paginação de 25 registros (tanto no CRUD, como na chamada a API)
-- utilize os diretórios `node` e `rails`
-- utilize os arquivos `.env` na raiz de cada diretório para string de conexão
-    - string de conexão com usuário `root` sem senha
+## Iniciando o database
+Para iniciar o database é necessário entrar no root
+do projeto rails e executar os seguintes comandos 
 
-### Executar o projeto
+```bash
+bundle install
+rake db:create
+rake db:migrate
+```
 
-Deverá executar com Rails `rais s` e Node `yarn start`
+o bundle install é necessário visto que uma gema é
+utilizada para configurar o .env e a configuração 
+do database é baseada no env.
+
+Será criado então um arquivo dialog-rails.sqlite3 na 
+raíz do projeto
+
+### Populando
+Escolhi utilizar seeds(db/seeds.rb) para popular o banco de dados
+e não outra migration, então basta executar
+
+```bash
+rake db:seed
+```
+que o sistema irá criar 100 usuários na tabela "users"
+com uf e cidades baseados no git:
+https://gist.github.com/letanure/3012978
+
+## Página de CRUD
+
+Após iniciar o servidor com
+
+```bash
+rails s
+```
+
+Acessar a página localhost:3000 redirecionará para
+a página dos usuários, clicar em qualquer nome permite
+editá-lo.
 
 
-## Pull Request
-Submeter uma PR [para esse repositório](https://github.com/criticalmassbr/dialog-rails-test).
+## API
+
+Basta executar
+
+```bash
+npm install
+yarn start
+```
+
+A aplicação irá executar na porta 3005 e a rota
+"user/x" irá retornar a páginação na página 'x',
+ordenado por id, além do count contabilizando todas
+as ocorrências de usuário
+
+### Banco de dados e ORM
+O Sequelize é utilizado como ORM.As aplicações compartilham o mesmo banco de dados,
+para isso foi necessário colocar o caminho para o arquivo
+.sqlite3
+```bash
+DB_NAME=../../rails/dialog-rails.sqlite3
+```
+
+
+
+
+
 
 

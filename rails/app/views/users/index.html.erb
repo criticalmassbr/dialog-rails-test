@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      // Pequena gambiarra pra destacar a página escolhida
+      $(document).ready(function() {
+        let selectedPageIndex = window.location.pathname.split("/").pop()
+        $("#pbutton_"+selectedPageIndex).addClass("selected")
+      })
+    </script>
+  </head>
+
+  <body>
+    <div class="background">
+      <h1 class="">Usuários Dialog </h1>
+
+      <div class="user-container">
+        <% @users.each do |user| %>
+          <div class="card">
+            <%= link_to user.nome, show_user_path(user.id), remote: true, data: { toggle: "modal", target:"#user_modal" }, class: "btn btn-info colored" %>
+            <%= link_to '🗑️', delete_user_path(user.id), method: :delete, data: { confirm: 'Certeza que deseja excluir usuário?' } %>
+          </div>
+        <% end %>
+      </div>
+
+      <br>
+
+
+      <%# Páginação %>
+      <div class="pagination-container">
+        <% (1 .. (User.count / 25 + 1)).each do |index|%>
+          <a id=<%= "pbutton_#{index}"%> href=<%= "#{index}"%> class="paginate-button" ><%= index %></a>
+        <% end %>
+      </div>
+
+      <%= link_to 'Criar Usuário', new_user_path, remote: true, data: { toggle: "modal", target: "#user_modal" }, class: "btn btn-warning my-button" %>
+
+      <%# Alerta de notice %>
+      <div class="col col-md-12">
+        <% flash.each do |type, msg| %>
+          <div class="alert alert-success alert-dismissible align-self-end">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong><%= msg %></strong>
+        <% end %>
+      </div>
+
+    </div>
+
+    <%# Modal de usuário %>
+    <div class="modal fade" id="user_modal" tabindex="-1" role="dialog" aria-labelledby="Usuário" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>    
+
+  </body>
+</html>
