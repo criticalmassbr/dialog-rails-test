@@ -1,0 +1,39 @@
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUserModalLabel">Cadastro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_for @user do |f| %>
+        <div class="modal-body">
+          <h6 class='w-100 mandatory-inputs'>*Campo Obrigatório</h6>
+          <div class='mt-2'>
+            <%= f.label :nome, 'Nome do Usuário*', class: 'form-label' %><br>
+            <%= f.text_field :nome, class: 'form-control' %>
+          </div>
+          <div class='mt-2'>
+            <%= f.label :idade, 'Idade*', class: 'form-label' %><br>
+            <%= f.text_field :idade, class: 'form-control' %>
+          </div>
+          <div class='mt-2'>
+            <%= f.label :sexo, 'Sexo', class: 'form-label' %><br>
+            <%= f.select :sexo, ['', 'Masculino', 'Feminino'], {}, class: 'form-select' %>
+          </div>
+          <div class='mt-2'>
+            <%= f.label :cidade, 'Cidade', class: 'form-label' %><br>
+            <%= f.text_field :cidade, class: 'form-control' %>
+          </div>
+          <div class='mt-2'>
+            <%= f.label :uf, 'Estado', class: 'form-label' %><br>
+            <%= f.select :uf, uf_options, {}, class: 'form-select' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <%= f.submit 'Criar usuário', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class='container w-30'>
+  <h6 class='w-100 mandatory-inputs'>*Campo Obrigatório</h6>
+  <div class='vai'>
+    <%= form_for @user do |f| %>
+      <div class='mt-4'>
+        <%= f.label :nome, 'Nome do Usuário*', class: 'form-label' %><br>
+        <%= f.text_field :nome, class: 'form-control' %>
+      </div>
+      <div class='mt-4'>
+        <%= f.label :idade, 'Idade*', class: 'form-label' %><br>
+        <%= f.text_field :idade, class: 'form-control' %>
+      </div>
+      <div class='mt-4'>
+        <%= f.label :sexo, 'Sexo', class: 'form-label' %><br>
+        <%= f.select :sexo, ['', 'Masculino', 'Feminino'], {}, class: 'form-select' %>
+      </div>
+      <div class='mt-4'>
+        <%= f.label :cidade, 'Cidade', class: 'form-label' %><br>
+        <%= f.text_field :cidade, class: 'form-control' %>
+      </div>
+      <div class='mt-4'>
+        <%= f.label :uf, 'Estado', class: 'form-label' %><br>
+        <%= f.select :uf, uf_options, {}, class: 'form-select' %>
+      </div>
+      <div class='text-center'>
+        <%= f.submit 'Editar Usuário', class: 'btn btn-primary mt-5' %>
+      </div>
+    <% end %>
+  </div>
+</div>

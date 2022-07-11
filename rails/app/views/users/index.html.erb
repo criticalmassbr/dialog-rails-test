@@ -1,0 +1,39 @@
+
+<%= link_to 'Criar novo usuário', '#addUserModal', class: 'btn btn-primary m-3', 'data-bs-toggle' => 'modal' %>
+
+<div class='m-3'> <%= paginate @users, window: 1 %> </div>
+
+<table class='table m-3'>
+  <thead>
+    <tr class='bg-light'>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Sexo</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr id="user-<%= user.id %>">
+        <td><%= user.nome %></td>
+        <td><%= user.idade %></td>
+        <td><%= user.sexo %></td>
+        <td><%= user.cidade %></td>
+        <td><%= user.uf %></td>
+        <td>
+          <%= link_to '', edit_user_path(user), class: 'btn btn-primary fas fa-pencil-alt' %>
+          <%= link_to '', user_path(user), method: :delete,
+                class: 'btn btn-danger fas fa-trash',
+                data: { confirm: 'Tem certeza? Esta ação não poderá ser revertida!' }
+          %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='m-3'> <%= paginate @users, window: 1 %> </div>
+
+<%= render 'new_user_modal' %>
