@@ -36,7 +36,11 @@ application up and running.
 
 Things you may want to cover:
 
+<<<<<<< HEAD
 - Ruby version
+=======
+- Ruby version - 2.7.5
+>>>>>>> Db config
 
 - System dependencies
 
