@@ -1,9 +1,13 @@
 <h2><%= @user.name %></h2>
 <p>
-<%= @user.age %>,
+<%= @user.age %> years old,
 <%= @user.sex %>,  
 <%= @user.city + ' - ' + @user.uf %>
 </p>
 <ul>
   <li><%= link_to "Edit", edit_user_path(@user) %></li>
+  <li><%= button_to "Destroy", user_path(@user), method: :delete, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }  %></li>
 </ul>
