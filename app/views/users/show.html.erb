@@ -4,3 +4,6 @@
 <%= @user.sex %>,  
 <%= @user.city + ' - ' + @user.uf %>
 </p>
+<ul>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+</ul>

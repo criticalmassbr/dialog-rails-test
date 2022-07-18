@@ -1,46 +1,4 @@
 <h1>New User</h1>
 
-<%= form_with model: @user do |f| %>
-    <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true %>
-    <% @user.errors.full_messages_for(:name).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-    </div>
-
-    <div>
-    <%= f.label :age %><br>
-    <%= f.select :age, ('1'...'120').to_a, include_blank: true %>
-    <% @user.errors.full_messages_for(:age).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-    </div>
-
-    <div>
-    <%= f.label :sex %><br>
-    <%= f.select :sex, %w[Male Female Other], include_blank: true %>
-    <% @user.errors.full_messages_for(:sex).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-    </div>
-
-    <div>
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-    <% @user.errors.full_messages_for(:city).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-    </div>
-
-    <%= f.label :uf %><br>
-    <%= f.select :uf, ApplicationHelper::UF, include_blank: true %>
-    <% @user.errors.full_messages_for(:uf).each do |message| %>
-        <div><%= message %></div>
-    <% end %>
-    </div>
-
-    <div>
-    <%= f.submit %>
-    </div>
-<% end %>
+<%= render "form", user: @user, button: 'Create User' %>
+    
