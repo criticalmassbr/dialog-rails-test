@@ -32,7 +32,7 @@
     </div>
 
     <%= f.label :uf %><br>
-    <%= f.select :uf, ApplicationHelper::UF, include_blank: true %>
+    <%= f.select :uf, UsersHelper::UF, include_blank: true %>
     <% @user.errors.full_messages_for(:uf).each do |message| %>
         <div><%= message %></div>
     <% end %>

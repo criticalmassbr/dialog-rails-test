@@ -3,5 +3,5 @@ class User < ApplicationRecord
     validates :age, presence: true, numericality: {only_integer: true, greater_than: 0}
     validates :sex, inclusion: { in: %w[Male Female Other].freeze }
     validates :city, presence: { message: "city must be filled" }
-    validates :uf, inclusion: { in: ApplicationHelper::UF }
+    validates :uf, inclusion: { in: UsersHelper::UF }
 end
