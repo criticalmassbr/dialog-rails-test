@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
+## Gemfile for Rails 3+, Sinatra, or Merb
+gem 'will_paginate', '~> 3.3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
