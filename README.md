@@ -42,7 +42,11 @@ Things you may want to cover:
 - Ruby version - 2.7.5
 >>>>>>> Db config
 
+- Rails version - 6.0.5
+
 - System dependencies
+
+  - `bundle install` to install all gems
 
 - Configuration
 
