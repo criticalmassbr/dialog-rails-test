@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :sexo %>
-    <%= form.number_field :sexo %>
+    <%= form.select(:sexo, %w[Masculino Feminino Outro], {:include_blank => 'Selecione'}) %>
   </div>
 
   <div class="field">
