@@ -49,7 +49,6 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    binding.pry
     @user.destroy
 
     respond_to do |format|
