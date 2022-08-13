@@ -1,5 +1,19 @@
 # Dialog Rails/Node Test
 
+### Observações Importantes ###
+ 
+- Criar o banco localmente no app rails com o comando rails db:create
+- Executar migração no app rails com o comando rails db:migrate
+- Popular banco de dados com 100 registros, rodar o comando rails db:seed (app Rails)
+- Endpoint rails (localhost:3000/users)
+
+- Node => Setar o banco com credenciais iguais ao da aplicação rails
+- Node => executar o comando npm install depois npm start
+- Node => endpoint com dados paginados em json, (localhost:8080/user/index/númeropagina)
+- Node => no endpoint passamos o número da pagina de 0 a 3, exemplo (localhost:8080/user/index/0), assim retorna os 25 primeiros registro ordenados por Id na direção ascendente
+
+
+
 ## Objetivo
 
 Desenvolver uma aplicação Rails, com duas páginas de listagem:
@@ -23,7 +37,7 @@ Desenvolver uma aplicação Rails, com duas páginas de listagem:
 
 ### Executar o projeto
 
-Deverá executar com Rails `rais s` e Node `yarn start`
+Deverá executar com Rails `rails s` e Node `yarn start`
 
 
 ## Pull Request
