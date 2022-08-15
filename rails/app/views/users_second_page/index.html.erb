@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+<div class="row">
+  <div class="col">
+  <%= link_to '1a página CRUD da tabela', users_path %>
+  <div>
+
+  <div class="col">
+  <%= link_to 'Criar usuário', new_user_path %>
+  <div> 
+
+  <div class="col">
+  <%= link_to "Pŕoxima", :controller => "users_second_page", :page => (@current_page + 1) %>
+
+  <% if (@current_page > 1) %>
+    <%= link_to "Anterior", :controller => "users_second_page", :page => (@current_page - 1) %>
+  <% end %>
+
+  <div> 
+<div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">UF</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+     <tr> 
+        <td><%= user['name'] %></td>
+        <td><%= user['age'] %></td>
+        <td><%= format_gender(user['gender']) %></td>
+        <td><%= user['city'] %></td>
+        <td><%= user['uf'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="row">
+    <div class="col">
+      <%= link_to "Pŕoxima", :controller => "users_second_page", :page => (@current_page + 1) %>
+
+      <% if (@current_page > 1) %>
+        <%= link_to "Anterior", :controller => "users_second_page", :page => (@current_page - 1) %>
+      <% end %>
+    <div> 
+<div> 
+
+<div>
