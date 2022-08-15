@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+<div class="row">
+  <div class="col">
+  <%= link_to '2a página leitura API', users2_path %>
+  <div>
+
+  <div class="col">
+  <%= link_to 'Criar usuário', new_user_path %>
+  <div>
+
+  <div class="col">
+    <%= link_to_next_page @users, "Próximo" %>
+    <%= link_to_previous_page @users, "Anterior" %>
+  <div>
+
+<div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">UF</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= format_gender(user.gender) %></td>
+        <td><%= user.city %></td>
+        <td><%= user.uf %></td>
+        <td><%= link_to 'Visualizar', user %></td>
+        <td><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="col">
+<%= link_to_next_page @users, "Próximo" %>
+<%= link_to_previous_page @users, "Anterior" %>
+<div>
+
+<div>
