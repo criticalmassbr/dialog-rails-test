@@ -1,4 +1,4 @@
-const User = require("./user");
+const User = require("../models/user");
 
 exports.getUsers = (req, res) => {
   const page = +req.query.page | 1;

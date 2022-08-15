@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const database = require("./db");
+const database = require("../../database/db");
 
 const User = database.define("users", {
   id: {
@@ -16,7 +16,7 @@ const User = database.define("users", {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  sex: {
+  gender: {
     type: Sequelize.STRING,
     allowNull: false,
   },
