@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: dialog-rails
+
+test:
+  <<: *default
+  database: crud_blog_test
+
+production:
+  <<: *default
+  database: crud_blog_production
+  username: crud_blog
+  password: <%= ENV["CRUD_BLOG_DATABASE_PASSWORD"] %>
